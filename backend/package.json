@@ -1,0 +1,13 @@
+{
+  "type": "module",
+  "scripts": {
+    "//1": "Verifica se o db.json existe. Se não existir, cria a partir do template antes de iniciar o servidor.",
+    "prestart": "npx shx test -e db.json || npx shx cp db.template.json db.json",
+    
+    "//2": "Apenas inicia o json-server usando o banco atual.",
+    "start": "npx json-server db.json --port 5000",
+
+    "//3": "Força a limpeza do banco copiando o template por cima e inicia o servidor.",
+    "restart": "npx shx cp db.template.json db.json && npm start"
+  }
+}
