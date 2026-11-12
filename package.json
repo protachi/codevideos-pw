@@ -1,0 +1,8 @@
+{
+  "name": "spa-codevideos-pw",
+  "version": "1.0.0",
+  "scripts": {
+    "dev:browser-sync": "npx browser-sync start --server --files '**/*' --single",
+    "dev:serve": "npx serve -s"
+  }
+}
