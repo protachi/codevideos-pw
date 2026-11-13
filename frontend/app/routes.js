@@ -6,17 +6,12 @@
 export const routes = [
   {
     path: '/',
-    page: '/pages/home.html',
+    page: '/pages/home/home', //a extensão específica será adicionada em tempo de execução
     title: 'Home'
   },
   {
-    path: '/sobre',
-    page: '/pages/sobre.html',
-    title: 'Sobre'
-  },
-  {
     path: '/404',
-    page: '/pages/404.html',
+    page: '/pages/404/404',
     title: 'Not Found'
   }
 ];

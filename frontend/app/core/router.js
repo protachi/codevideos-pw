@@ -12,8 +12,6 @@ export class Router {
 
   // Função privada auxiliar para gerenciar o histórico do navegador
   #updateHistory(path, skipHistory = false) {
-    console.log('windows location', window.location.pathname)
-    console.log('path', path)
     if (skipHistory || !path || window.location.pathname === path) return;
 
     if (path === '/404') {
@@ -63,6 +61,36 @@ export class Router {
     return html;
   }
 
+  // Função privada para atualizar o CSS da página
+  #loadCSS(cssPath) {
+    let pageStyle = document.getElementById('page-style');
+
+    if (!pageStyle) {
+      pageStyle = document.createElement('link');
+      pageStyle.id = 'page-style';
+      pageStyle.rel = 'stylesheet';
+      document.head.appendChild(pageStyle);
+    }
+
+    pageStyle.href = cssPath;
+  }
+
+  // Função privada para carregar o JS da página
+  async #loadJS(jsPath) {
+    try {
+      const pageModule = await import(jsPath);
+
+      // Garante que o JS rode após o DOM já ter sido alterado
+      requestAnimationFrame(() => {
+        if (pageModule.default && typeof pageModule.default === 'function') {
+          pageModule.default();
+        }
+      });
+    }catch(err) {
+      console.warn(`Não foi possível obter o arquivo javascript "${jsPath}"\n`, err.message);
+    }
+  }
+
   // Navega para a rota desejada
   async navigateTo(path, skipHistory = false) {
     // Seleciona o elemento raiz do index.html (#app-page)
@@ -70,31 +98,38 @@ export class Router {
     let html;
 
     let route = routes.find(route => route.path === path);
-    console.log(route);
-
 
     try {
       if (!route) {
         route = routes.find(r => r.path === '/404');
 
-        if (!route) {
+        if (!route || !route.page) {
           const err = new Error(`A rota "${path}" não existe e a página 404 padrão não foi configurada.`);
           err.name = 'Erro404';
           throw err;
         }
       }
 
-
       if (route.title) {
         document.title = route.title;
       }
 
-      console.log('navigateTo: page:', route.page)
       this.#updateHistory(route.path, skipHistory);
 
+      const filePaths = {
+        html: `${route.page}.html`,
+        css: `${route.page}.css`,
+        js: `${route.page}.js`
+      }
 
       //chama a função para tentar obter a página html
-      html = await this.#getPage(route.page);
+      html = await this.#getPage(filePaths.html);
+
+      this.#loadCSS(filePaths.css);
+      
+      await this.#loadJS(filePaths.js);
+      
+
     } catch (err) {
 
       //tenta buscar a página 404 se a página não foi encontrada

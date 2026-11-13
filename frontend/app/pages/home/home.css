@@ -1,0 +1,12 @@
+/**
+ * Folha de estilo para a página HOME
+ * Essa folha só será carregada quando a página for carregada
+ * Atenção: qualquer alteração a um elemento geral vai afetar todos os elementos da página toda,
+ * utilize classes/atributos/id para selecionar os elementos desejadas dessa página
+ */
+
+/* Altera apenas parágrafos filhos de um elemento da classe 'page-home' */
+.page-home p{
+  color: blue;
+  font-size: 4em;
+}
