@@ -2,3 +2,62 @@
  * Folha de estilo global
  * Utilize essa folha para alterações que devem valer para elementos em todas as páginas
  */
+ 
+/* Palheta geral */
+:root {
+  --blue-background: #00102a;
+  --blue-primary: #0261f9;
+  --blue-bright: #01aefb;
+  --blue-card: #051c3e;
+  --text: #fff;
+  --green-bright: #9fea11;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  font-family: "Inter", "Roboto Mono", sans-serif;
+}
+
+body {
+  color: var(--text);
+  background-color: var(--blue-background);
+}
+
+h1 {
+  font-size: 1.5em;
+}
+
+a {
+  text-decoration: none;
+}
+
+.btn {
+  text-align: center;
+  padding: 24px;
+}
+.btn.solid {
+  border-radius: 4px;
+  font-weight: bold;
+}
+.btn.primary.solid {
+  background-color: var(--blue-primary);
+  color: var(--text);
+}
+.btn.secondary.solid {
+  background-color: var(--green-bright);
+  color: black;
+}
+
+.card {
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px;
+  align-items: center;
+  background-color: var(--blue-card);
+}

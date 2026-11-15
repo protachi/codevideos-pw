@@ -10,6 +10,11 @@ export const routes = [
     title: 'Home'
   },
   {
+    path: '/sucesso',
+    page: '/pages/sucesso/sucesso',
+    title: 'Sucesso'
+  },
+  {
     path: '/404',
     page: '/pages/404/404',
     title: 'Not Found'
