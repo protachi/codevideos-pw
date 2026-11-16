@@ -1,0 +1,14 @@
+.check-icon > i{
+  font-size: 8em;
+  color: var(--green-bright);
+}
+
+.card .btn {
+  align-self: stretch;
+}
+
+[id^=page] { /* Seleciona as divs com id="page..." */
+  margin: auto;
+  width: 100%;
+  max-width: 1000px;
+}

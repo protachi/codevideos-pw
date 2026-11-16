@@ -2,3 +2,88 @@
  * Folha de estilo global
  * Utilize essa folha para alterações que devem valer para elementos em todas as páginas
  */
+ 
+/* Palheta geral */
+:root {
+  --blue-background: #00102a;
+  --blue-primary: #0261f9;
+  --blue-bright: #01aefb;
+  --blue-card: #051c3e;
+  --text: #fff;
+  --green-bright: #9fea11;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  font-family: "Inter", "Roboto Mono", sans-serif;
+}
+
+body {
+  color: var(--text);
+  background-color: var(--blue-background);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main#app-page {
+  flex: 1; /* Conteúdo estica no espaço livre entre header e footer */
+
+  /* Permite o comportamento de flex grow para as páginas filhas */
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  font-size: 1.5em;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text);
+}
+
+.btn {
+  --btn-background: var(--blue-primary); /* Define o fundo padrão */
+  --btn-color: var(--text); /* Define a cor padrão */
+
+  background-color: var(--btn-background);
+  color: var(--btn-color);
+  text-align: center;
+  padding: 24px;
+  transition: filter 0.2s ease, transform 0.2s ease; /* Transição é aplicada na entrada e saída para filter e transform*/
+}
+.btn.solid {
+  border-radius: 16px;
+  font-weight: bold;
+}
+.btn.primary.solid {
+  --btn-background: var(--blue-primary);
+  --btn-color: var(--text);
+}
+.btn.secondary.solid {
+  --btn-background: var(--green-bright);
+  --btn-color: black;
+}
+.btn:hover {
+  filter: brightness(1.15); /* Aumenta o brilho em 15% */
+}
+.btn:active {
+  filter: brightness(0.9);  /* Escurece 10% ao clicar */
+  transform: scale(0.98); /* Encolhe 2% ao clicar */
+}
+
+.card {
+  width: 100%;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px;
+  align-items: center;
+  background-color: var(--blue-card);
+}
