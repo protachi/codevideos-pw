@@ -1,9 +1,17 @@
-.page-404 a {
-  font-family: 'arial', 'sans-serif';
-  text-decoration: none;
-  font-size: 1.2rem;
+
+.search-icon {
+  border-radius: 100%;
+  border: 2px solid var(--blue-bright);
+  padding: 16px;
+}
+.search-icon > i{
+  font-size: 8em;
+  color: var(--green-bright);
 }
 
-.page-404 a:hover {
-  color: blue;
+
+[id^=page] {
+  margin: auto;
+  max-width: 1000px;
+  
 }
