@@ -1,0 +1,8 @@
+{
+  "name": "spa-codevideos-pw",
+  "version": "1.0.0",
+  "scripts": {
+    "dev:browser-sync": "npx browser-sync start --server app/ --files 'frontend/**/*' --single",
+    "dev:serve": "npx serve -s -l 5500"
+  }
+}

@@ -7,7 +7,15 @@
   <title>Codevideos</title>
 </head>
 <body>
-  <header id="main-header"></header>
+  <header id="main-header">
+    <nav>
+      <ul>
+        <li><a href="/" data-page>Home</a></li>
+        <li><a href="/sobre" data-page>Sobre</a></li>
+        <li><a href="/contato" data-page>Contato</a></li>
+      </ul>
+    </nav>
+  </header>
 
   <main id="app-page">
       <!-- O conteúdo da página vai entrar aqui via JS -->
@@ -16,6 +24,8 @@
   <footer id="main-footer"></footer>
 
   <!-- type: module permite o uso de 'import' e 'export' mas obriga usar um liveserver para a aplicação devido ao CORS -->
-  <script type="module" src="./app.js"></script>
+  <!-- defer faz com que o JS seja carregado em paralelo, mas só executado quando a árvore DOM for totalmente carregada -->
+  <script type="module" src="./app.js" defer></script>
 </body>
 </html>
+
