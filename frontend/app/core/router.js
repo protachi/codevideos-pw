@@ -5,7 +5,7 @@
 
 import { routes } from "../routes.js";
 
-export class Router {
+class Router {
   constructor() {
     this.init();
   }
@@ -165,10 +165,7 @@ export class Router {
     window.addEventListener('popstate', () => {
       this.navigateTo(window.location.pathname, true);
     })
-
-    // Lida com a carga inicial da página (F5 ou digitação direta na URL)
-    document.addEventListener('DOMContentLoaded', () => {
-      this.navigateTo(window.location.pathname, true);
-    });
   }
 }
+
+export const router = new Router();

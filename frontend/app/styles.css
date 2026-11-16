@@ -28,6 +28,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  margin: 0;
 }
 
 main#app-page {
@@ -36,6 +37,8 @@ main#app-page {
   /* Permite o comportamento de flex grow para as páginas filhas */
   display: flex;
   flex-direction: column;
+
+  margin: 8px;
 }
 
 h1 {
@@ -47,15 +50,98 @@ a {
   color: var(--text);
 }
 
+/* HEADER */
+#main-header {
+  padding: .5rem 0 1rem;
+  border-bottom: 1px solid var(--blue-bright, white);
+}
+#main-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1000px;
+  margin:auto;
+}
+#main-header .login.btn {
+  min-width: 180px;
+  padding: 0.5rem 1rem; 
+  font-size: 1rem;
+}
+#main-header .user-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 100%;
+  object-fit: cover;
+}
+#main-header .dropdown-trigger {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: none;
+  border: none;
+  color: inherit;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+#main-header .user-menu {
+  position: relative;
+}
+#main-header .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+
+  width: 100%;
+  min-width: 150px;
+  background-color: var(--blue-card);
+  padding: 0;
+  margin: 0;
+  border-radius: 0 0 8px 8px;
+}
+#main-header .dropdown-menu li {
+  list-style: none;
+}
+#main-header .dropdown-menu li .menu-link {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 0.5rem 1rem;
+  color: inherit;
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}  
+#main-header .dropdown-menu li .menu-link:hover {
+  background-color: rgba(255, 255, 255, .4);
+  color: #9fea11;
+  border-left:3px solid #9fea11;
+}
+
+
+#main-header .user-menu:hover .dropdown-menu{
+  display: block;
+}
+
 .btn {
   --btn-background: var(--blue-primary); /* Define o fundo padrão */
   --btn-color: var(--text); /* Define a cor padrão */
 
+  display: inline-flex;
   background-color: var(--btn-background);
   color: var(--btn-color);
-  text-align: center;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  
   padding: 24px;
   transition: filter 0.2s ease, transform 0.2s ease; /* Transição é aplicada na entrada e saída para filter e transform*/
+  
+  text-decoration: none; /* Tira o underline se for um <a> */
 }
 .btn.solid {
   border-radius: 16px;
