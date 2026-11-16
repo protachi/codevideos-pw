@@ -10,8 +10,8 @@
 }
 
 
-[id^=page] {
+[id^=page] { /* Seleciona as divs com id="page..." */
   margin: auto;
+  width: 100%;
   max-width: 1000px;
-  
 }

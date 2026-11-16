@@ -32,6 +32,10 @@ body {
 
 main#app-page {
   flex: 1; /* Conteúdo estica no espaço livre entre header e footer */
+
+  /* Permite o comportamento de flex grow para as páginas filhas */
+  display: flex;
+  flex-direction: column;
 }
 
 h1 {
