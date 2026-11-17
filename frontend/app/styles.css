@@ -44,6 +44,12 @@ main#app-page {
   flex-direction: column;
 }
 
+[id^=page] { /* Seleciona as divs com id="page..." */
+  margin: auto;
+  width: 100%;
+  max-width: 1000px;
+}
+
 h1, h2, h3, h4, h5, h6, strong {
   color: var(--text-highlight);
 }
@@ -71,7 +77,7 @@ a {
 .btn {
   --btn-background: var(--blue-primary);
   /* Define o fundo padrão */
-  --btn-color: var(--text);
+  --btn-color: var(--text-highlight);
   /* Define a cor padrão */
 
   background-color: var(--btn-background);
@@ -91,7 +97,7 @@ a {
 
 .btn.primary.solid {
   --btn-background: var(--blue-primary);
-  --btn-color: var(--text);
+  --btn-color: var(--text-highlight);
 }
 
 .btn.secondary.solid {
