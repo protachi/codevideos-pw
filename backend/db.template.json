@@ -24,6 +24,28 @@
             "id": "aula_x001",
             "nome": "O que é uma variável?",
             "urlVideo": "http://vimeo.com/aula01"
+          },
+          {
+            "id": "aula_x002",
+            "nome": "Criando uma variável",
+            "urlVideo": "http://vimeo.com/aula01"
+          },
+          {
+            "id": "aula_x003",
+            "nome": "Reatribuindo valor",
+            "urlVideo": "http://vimeo.com/aula01"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "titulo": "Condicionais",
+        "ordem": 2,
+        "aulas": [
+          {
+            "id": "aula_x004",
+            "nome": "Conhecendo o for",
+            "urlVideo": "http://vimeo.com/aula01"
           }
         ]
       }

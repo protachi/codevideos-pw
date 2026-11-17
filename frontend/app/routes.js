@@ -15,6 +15,26 @@ export const routes = [
     title: 'Sucesso'
   },
   {
+    path: '/home',
+    page: '/pages/home/home',
+    title: 'Área do Aluno | CodeVideos'
+  },
+  {
+    path: '/perfil',
+    page: '/pages/perfil/perfil',
+    title: 'Meu Perfil'
+  },
+  {
+    path: '/curso',
+    page: '/pages/curso/curso',
+    title: 'Curso'
+  },
+  {
+    path: '/aula',
+    page: '/pages/aula/aula',
+    title: 'Curso'
+  },
+  {
     path: '/404',
     page: '/pages/404/404',
     title: 'Not Found'
