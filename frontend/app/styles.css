@@ -2,19 +2,24 @@
  * Folha de estilo global
  * Utilize essa folha para alterações que devem valer para elementos em todas as páginas
  */
- 
+
 /* Palheta geral */
 :root {
-  --blue-background: #00102a;
   --blue-primary: #0261f9;
   --blue-bright: #01aefb;
-  --blue-card: #051c3e;
-  --text: #fff;
+  --card-background: #051c3e;
+  --text: #b8cbe3;
+  --text-highlight: #fff;
   --green-bright: #9fea11;
+  --card-border: #426a9e;
+  --page-background: radial-gradient(#0757be, #102444, #00102a);
 }
 
 * {
   box-sizing: border-box;
+
+  margin: 0;
+  padding: 0;
 }
 
 html {
@@ -24,7 +29,7 @@ html {
 
 body {
   color: var(--text);
-  background-color: var(--blue-background);
+  background: var(--page-background, #00102a);
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -32,7 +37,8 @@ body {
 }
 
 main#app-page {
-  flex: 1; /* Conteúdo estica no espaço livre entre header e footer */
+  /* Conteúdo estica no espaço livre entre header e footer */
+  flex: 1;
 
   /* Permite o comportamento de flex grow para as páginas filhas */
   display: flex;
@@ -41,9 +47,30 @@ main#app-page {
   margin: 8px;
 }
 
-h1 {
-  font-size: 1.5em;
+[id^=page] { /* Seleciona as divs com id="page..." */
+  margin: auto;
+  width: 100%;
+  max-width: 1000px;
 }
+
+h1, h2, h3, h4, h5, h6, strong {
+  color: var(--text-highlight);
+}
+
+h1 {
+  font-size: 1.5rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: .5rem 0;
+}
+
 
 a {
   text-decoration: none;
@@ -132,13 +159,19 @@ a {
 }
 
 .btn {
-  --btn-background: var(--blue-primary); /* Define o fundo padrão */
-  --btn-color: var(--text); /* Define a cor padrão */
+  /* Define o fundo padrão */
+  --btn-background: var(--blue-primary);
+  /* Define a cor padrão */
+  --btn-color: var(--text-highlight);
 
   display: inline-flex;
   background-color: var(--btn-background);
   color: var(--btn-color);
   justify-content: center;
+  
+  font-size: inherit;
+  cursor: pointer;
+ 
   align-items: center;
   gap: 0.5rem;
   
@@ -147,24 +180,33 @@ a {
   
   text-decoration: none; /* Tira o underline se for um <a> */
 }
+
 .btn.solid {
   border-radius: 16px;
   font-weight: bold;
+  border: none;
 }
+
 .btn.primary.solid {
   --btn-background: var(--blue-primary);
-  --btn-color: var(--text);
+  --btn-color: var(--text-highlight);
 }
+
 .btn.secondary.solid {
   --btn-background: var(--green-bright);
   --btn-color: black;
 }
+
 .btn:hover {
-  filter: brightness(1.15); /* Aumenta o brilho em 15% */
+  /* Aumenta o brilho em 15% */
+  filter: brightness(1.15);
 }
+
 .btn:active {
-  filter: brightness(0.9);  /* Escurece 10% ao clicar */
-  transform: scale(0.98); /* Encolhe 2% ao clicar */
+  /* Escurece 10% ao clicar */
+  filter: brightness(0.9);
+  /* Encolhe 2% ao clicar */
+  transform: scale(0.98);
 }
 
 .card {
@@ -172,8 +214,16 @@ a {
   border-radius: 8px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
   padding: 24px;
-  align-items: center;
-  background-color: var(--blue-card);
+  background-color: var(--card-background);
+  border: 1px solid var(--card-border);
+}
+
+/* RODAPÉ */
+footer {
+  text-align: center;
+  color: #426a9e;
+  font-size: 12px;
+  margin-top: 45px;
+  padding-bottom: 20px;
 }

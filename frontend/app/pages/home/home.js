@@ -1,16 +1,14 @@
-export default () => {
+export default 
+function init() {
+  console.log('Home logada works!')
 
-  console.debug('Home JS works')
+  const continueButton = document.getElementById("continue-course");
 
-  const btn = document.getElementById('test-js');
+  continueButton.addEventListener("click", () => {
+    alert("A área das aulas será conectada em breve.");
+  });
 
-  if(btn) {
-    btn.addEventListener('click', e => {
-     console.log('executando evento de clique no botão')
-    })  
-  }
-  
-};
+}
 
 
 
