@@ -36,8 +36,8 @@ body {
 }
 
 main#app-page {
-  flex: 1;
   /* Conteúdo estica no espaço livre entre header e footer */
+  flex: 1;
 
   /* Permite o comportamento de flex grow para as páginas filhas */
   display: flex;
@@ -75,18 +75,19 @@ a {
 }
 
 .btn {
-  --btn-background: var(--blue-primary);
   /* Define o fundo padrão */
-  --btn-color: var(--text-highlight);
+  --btn-background: var(--blue-primary);
   /* Define a cor padrão */
+  --btn-color: var(--text-highlight);
 
+  display: inline-flex;
   background-color: var(--btn-background);
   color: var(--btn-color);
-  text-align: center;
+  justify-content: center;
   padding: 24px;
   cursor: pointer;
-  transition: filter 0.2s ease, transform 0.2s ease;
   /* Transição é aplicada na entrada e saída para filter e transform*/
+  transition: filter 0.2s ease, transform 0.2s ease;
 }
 
 .btn.solid {
@@ -106,15 +107,15 @@ a {
 }
 
 .btn:hover {
-  filter: brightness(1.15);
   /* Aumenta o brilho em 15% */
+  filter: brightness(1.15);
 }
 
 .btn:active {
-  filter: brightness(0.9);
   /* Escurece 10% ao clicar */
-  transform: scale(0.98);
+  filter: brightness(0.9);
   /* Encolhe 2% ao clicar */
+  transform: scale(0.98);
 }
 
 .card {

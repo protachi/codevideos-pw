@@ -7,7 +7,7 @@ export const routes = [
   {
     path: '/',
     page: '/pages/landing/landing', //a extensão específica será adicionada em tempo de execução
-    title: 'Codevideos'
+    title: 'CodeVideos - Aprenda programação'
   },
   {
     path: '/sucesso',
