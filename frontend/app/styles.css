@@ -85,6 +85,7 @@ a {
   color: var(--btn-color);
   justify-content: center;
   padding: 24px;
+  font-size: inherit;
   cursor: pointer;
   /* Transição é aplicada na entrada e saída para filter e transform*/
   transition: filter 0.2s ease, transform 0.2s ease;

@@ -10,6 +10,11 @@ export const routes = [
     title: 'CodeVideos - Aprenda programação'
   },
   {
+    path: '/login',
+    page: '/pages/login/login-cadastro',
+    title: 'Entrar'
+  },
+  {
     path: '/sucesso',
     page: '/pages/sucesso/sucesso',
     title: 'Sucesso'
