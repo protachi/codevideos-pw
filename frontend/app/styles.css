@@ -63,6 +63,10 @@ a {
   max-width: 1000px;
   margin:auto;
 }
+#main-header .app-logo img {
+  width: 200px;
+  
+}
 #main-header .login.btn {
   min-width: 180px;
   padding: 0.5rem 1rem; 
