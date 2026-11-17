@@ -6,13 +6,18 @@
 export const routes = [
   {
     path: '/',
-    page: '/pages/home/home', //a extensão específica será adicionada em tempo de execução
-    title: 'Home'
+    page: '/pages/landing/landing', //a extensão específica será adicionada em tempo de execução
+    title: 'Codevideos'
   },
   {
     path: '/sucesso',
     page: '/pages/sucesso/sucesso',
     title: 'Sucesso'
+  },
+  {
+    path: '/home',
+    page: '/pages/home/home',
+    title: 'Área do Aluno | CodeVideos'
   },
   {
     path: '/404',

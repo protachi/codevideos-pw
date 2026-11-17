@@ -3,12 +3,19 @@
   border-radius: 100%;
   border: 2px solid var(--blue-bright);
   padding: 16px;
+  
+  /* Abraça o ícone */
+  width: fit-content; 
 }
 .search-icon > i{
   font-size: 8em;
   color: var(--green-bright);
 }
 
+#page-404 .card {
+  gap: 16px;
+  align-items: center;
+}
 
 [id^=page] { /* Seleciona as divs com id="page..." */
   margin: auto;
