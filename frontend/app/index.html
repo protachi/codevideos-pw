@@ -10,18 +10,20 @@
   <!-- Import de Material Icons -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=check_circle" />
+
+  <link rel="icon" type="image/x-icon" href="./favicon.ico">
   <link rel="stylesheet" href="./styles.css">
   <title>Codevideos</title>
 </head>
 <body>
   <header id="main-header">
-    <nav>
-      <ul>
-        <li><a href="/" data-page>Landing Home</a></li>
-        <li><a href="/perfil" data-page>Perfil</a></li>
-        <li><a href="/home" data-page>Área Logada</a></li>
-      </ul>
-    </nav>
+    <div class="container">
+      <a href="/" data-page class="app-logo">
+        <img src="./assets/logo-header.png" alt="Logo Codevideos">
+      </a>
+
+      <nav id="user-nav"><!-- Html dinâmico baseado no usuário logado --></nav>
+    </div>
   </header>
 
   <main id="app-page">
