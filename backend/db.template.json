@@ -1,0 +1,42 @@
+{
+  "usuarios": [
+    {
+      "id": "user_xpto",
+      "nome": "Abobrinha",
+      "senha": "123"
+    },
+    {
+      "id": "user_xpta",
+      "nome": "Abocado",
+      "senha": "456"
+    }
+  ],
+  "curso": {
+    "id": "course_c",
+    "titulo": "Programação em C",
+    "secoes": [
+      {
+        "id": 1,
+        "titulo": "Variáveis",
+        "ordem": 1,
+        "aulas": [
+          {
+            "id": "aula_x001",
+            "nome": "O que é uma variável?",
+            "urlVideo": "http://vimeo.com/aula01"
+          }
+        ]
+      }
+    ]
+  },
+  "progresso": [
+    {
+      "id": "prog_1",
+      "usuarioId": "user_xpta",
+      "aulasAssistidas": [
+        "1-aula_x001",
+        "1-aula_x002"
+      ]
+    }
+  ]
+}
