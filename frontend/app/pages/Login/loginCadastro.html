@@ -15,14 +15,15 @@
   <body>
     <div class="container">
       <div class="form-box login">
-        <form action="">
+        <form id="form-login" action="">
           <h1>Login</h1>
+           
           <div class="input-box">
-            <input type="text" placeholder="Usuário, CPF ou E-mail" required />
+            <input type="text" id="login-email" placeholder="E-mail" required />
             <i class="bx bxs-user"></i>
           </div>
           <div class="input-box">
-            <input type="password" placeholder="Senha" required />
+            <input type="password" id="login-senha" placeholder="Senha" required />
             <i class="bx bx-lock-alt"></i>
           </div>
           <div class="esqueci-senha">
@@ -30,7 +31,7 @@
               >Esqueceu a senha?</a
             >
           </div>
-
+          <p id="erro-login" style="color: red;"></p>
           <button type="submit" class="btn">Login</button>
           <p><br />ou conecte-se com:</p>
           <br />
@@ -47,16 +48,17 @@
             ></a>
           </div>
         </form>
-      </div>
-      <div class="form-box cadastro">
-        <form action="">
+      </div> 
+      <div class="form-box cadastro" id="form-cadastro">
+        <form  id="form-cadastro" action="">
           <h1>Cadastro</h1>
+         
           <div class="input-box">
-            <input type="text" placeholder="Usuário" required />
+            <input type="text"id="nome" placeholder="Usuário" required />
             <i class="bx bxs-user"></i>
           </div>
           <div class="input-box">
-            <input type="email" placeholder="E-mail" required />
+            <input type="email"id="email" placeholder="E-mail" required />
             <i class="bx bxs-envelope"></i>
           </div>
 
@@ -79,19 +81,19 @@
               id="telefone"
               name="telefone"
               placeholder="Telefone"
-              maxlength="9"
+              maxlength="11"
               required
             />
             <i class="bx bxs-phone"></i>
           </div>
 
           <div class="input-box">
-            <input type="password" placeholder="Senha" required />
+            <input type="password" id="senha" placeholder="Senha" required />
             <i class="bx bx-lock-alt"></i>
           </div>
 
           <div class="input-box">
-            <input type="password" placeholder="Confirme a senha" required />
+            <input type="password" id="confirmar-senha" placeholder="Confirme a senha" required />
             <i class="bx bx-check"></i>
           </div>
 
@@ -103,7 +105,7 @@
               Eu li e concordo com os <span>Termos de Serviços</span></a
             >
           </div>
-
+          <p id="erro" style="color: red;"></p>
           <button type="submit" class="btn">Cadastre-se</button>
 
           <p><br />ou cadastre-se com:</p>
@@ -127,6 +129,7 @@
           <img src="./img/kibonso.png" alt="logo" class="logo" />
           <h1>Bem-Vindo a CodeVideos!</h1>
           <br />
+          
           <p>Não possui uma conta?</p>
           <button class="btn cadastro-btn">Cadastre-se</button>
         </div>
