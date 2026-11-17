@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+[hidden] {
+    display: none;
+}
+
+body {
+    font-family: Inter, sans-serif;
+    background: radial-gradient(#0757be, #102444, #00102a);
+    color: #fff;
+    width: 90%;
+    max-width: 700px;
+    margin: 40px auto;
+}
+
+h1 {
+    font-size: 30px;
+    margin-bottom: 25px;
+}
+
+h2 {
+    font-size: 22px;
+    margin-bottom: 18px;
+}
+
+/* CARDS */
+section {
+    background: #102444;
+    border: 1px solid #426a9e;
+    border-radius: 12px;
+    padding: 22px;
+    margin-bottom: 25px;
+}
+
+/* PERFIL */
+#perfil {
+    text-align: center;
+}
+
+#perfil img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid #9fea11;
+    margin-bottom: 12px;
+}
+
+#perfil div {
+    margin-bottom: 8px;
+}
+
+#username {
+    font-size: 20px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+#perfil p {
+    color: #b8cbe3;
+    font-size: 14px;
+}
+
+/* BOTÕES */
+button {
+    background: #9fea11;
+    color: #00102a;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #b5ff35;
+}
+
+#edt-username {
+    padding: 5px 12px;
+    font-size: 12px;
+}
+
+body > button {
+    display: block;
+    margin: 0 auto 25px;
+}
+
+/* FORMULÁRIO DE SENHA */
+label {
+    display: block;
+    color: #b8cbe3;
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 18px;
+    background: #00102a;
+    color: #fff;
+    border: 1px solid #426a9e;
+    border-radius: 8px;
+}
+
+/* PROGRESSO */
+#btn-meus-cursos {
+    background: #0261f9;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+#barra-progresso {
+    width: 70%;
+    height: 18px;
+    accent-color: #9fea11;
+}
+
+#porcentagem {
+    color: #b8cbe3;
+    font-size: 13px;
+    margin-left: 10px;
+}
+
+#progresso p {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+#features {
+    color: #01aefb;
+    font-weight: bold;
+}
