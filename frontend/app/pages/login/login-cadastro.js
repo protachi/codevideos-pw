@@ -1,3 +1,5 @@
+import {router} from '../../core/router.js';
+
 export default
   function init() {
   const container = document.querySelector('#page-login.container');
@@ -26,7 +28,7 @@ export default
     const telefone = document.getElementById("telefone").value.trim();
     const senha = document.getElementById("senha").value;
     const confirmarSenha = document.getElementById("confirmar-senha").value;
-    const termos = document.getElementById("term").checked;
+    
 
 
     if (!nome || !email || !cpf || !telefone || !senha || !confirmarSenha) {
@@ -54,14 +56,9 @@ export default
       return;
     }
 
-    if (!termos) {
-      erro.textContent = "Você precisa aceitar os Termos de Serviços.";
-      return;
-    }
-
     erro.textContent = "";
 
-
+    
     const novoUsuario = {
       nome: nome,
       email: email,
@@ -70,19 +67,19 @@ export default
       senha: senha,
       picture: "https://i.pravatar.cc/150?img=12"
     };
-
+    
     try {
-      const resposta = await fetch("http://localhost:3001/usuarios", {
+      const resposta = await fetch("http://localhost:5000/usuarios", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(novoUsuario)
       });
-
+      
       if (!resposta.ok) {
         erro.textContent = "Erro ao cadastrar. Tente novamente.";
         return;
       }
-
+      
       const usuarioCriado = await resposta.json();
 
 
@@ -95,7 +92,7 @@ export default
       localStorage.setItem("usuario", JSON.stringify(usuarioLogado));
 
 
-      window.location.href = "sucesso.html";
+      router.navigateTo('/sucesso');
 
     } catch (e) {
       erro.textContent = "Não foi possível conectar ao servidor.";
