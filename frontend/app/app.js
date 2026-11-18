@@ -10,6 +10,20 @@ document.addEventListener('DOMContentLoaded', () => {
   // Lida com a carga inicial da página (F5 ou digitação direta na URL)
   router.navigateTo(window.location.pathname, true);
 
-  initHeader({name: 'Dragneel Natsu', picture: 'https://freepngimg.com/thumb/fairy_tail/25267-8-fairy-tail-clipart.png'});
+  const user = getUsuario();
+
+  initHeader(user);
 });
 
+function getUsuario() {
+
+  console.log('bebe');
+
+  const usuario = JSON.parse(localStorage.getItem('usuario'));
+
+  if(usuario) {
+    return usuario;
+  }
+
+  return null;  
+}
