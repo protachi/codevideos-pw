@@ -1,3 +1,5 @@
+import { router } from "../../core/router.js";
+
 function renderGuestNav() {
   return `
     <a href="/login" class="login btn solid secondary">
@@ -11,7 +13,7 @@ function renderUserNav(user) {
     <div class="user-menu"> 
       <button type="button" class="dropdown-trigger" aria-expanded="false" aria-haspopup="true">
         <img class="user-avatar" alt="Foto do perfil" src="${user.picture || '/assets/avatar-placeholder.png'}">
-        <span class="user-name">${user.name}</span>
+        <span class="user-name">${user.nome}</span>
       </button>
       
       <ul class="dropdown-menu">
@@ -33,10 +35,14 @@ function setupUserMenuEvents() {
   if(logoutBtn) {
     logoutBtn.addEventListener('click', e =>{
       //função de logout para limpar os dados e voltar para login ou home pública
-      console.log('logout event works!');
+      localStorage.removeItem('usuario');
+      initHeader();
+      router.navigateTo('/');
     });
   }
 }
+
+
 
 export function initHeader(user = null) {
   const navContainer = document.getElementById('user-nav');
@@ -47,3 +53,5 @@ export function initHeader(user = null) {
   //configura os eventos necessários
   setupUserMenuEvents();
 }
+
+

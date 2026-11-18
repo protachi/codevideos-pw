@@ -1,4 +1,4 @@
-.container {
+#page-login.container {
   position: relative;
   /* width: 1200px; */
   height: 780px;
@@ -25,7 +25,7 @@
 
 }
 
-.container.active .form-box {
+#page-login.container.active .form-box {
   right: 50%;
 }
 
@@ -33,7 +33,7 @@ form {
   width: 100%;
 }
 
-.container h1 {
+#page-login.container h1 {
   font-size: 36px;
   margin: -10px 0;
 }
@@ -109,7 +109,7 @@ span {
 }
 
 
-.container.active .toggle-box::before {
+#page-login.container.active .toggle-box::before {
   left: 50%;
 }
 
@@ -132,7 +132,7 @@ span {
   transition-delay: 1.2s;
 }
 
-.container.active .toggle-panel.toggle-left {
+#page-login.container.active .toggle-panel.toggle-left {
   left: -50%;
   transition-delay: .6s;
 
@@ -143,7 +143,7 @@ span {
   transition-delay: .6s;
 }
 
-.container.active .toggle-panel.toggle-right {
+#page-login.container.active .toggle-panel.toggle-right {
   right: 0;
   transition-delay: 1.2s;
 }
@@ -152,6 +152,6 @@ span {
   margin-bottom: 20px;
 }
 
-.container.active .form-box.form-box.cadastro {
+#page-login.container.active .form-box.form-box.cadastro {
   visibility: visible;
 }
