@@ -1,3 +1,4 @@
+import { initHeader } from '../../components/header/header.js';
 import {router} from '../../core/router.js';
 
 export default
@@ -105,43 +106,43 @@ export default
 
   formLogin.addEventListener("submit", async function (event) {
     event.preventDefault();
-
+    
     const email = document.getElementById("login-email").value.trim();
     const senha = document.getElementById("login-senha").value;
-
-
+    
+    
     if (!email || !senha) {
       erroLogin.textContent = "Preencha e-mail e senha.";
       return;
     }
-
+    
     erroLogin.textContent = "";
-
+    
     try {
-
+      
       const url =
-        "http://localhost:3001/usuarios?email=" + encodeURIComponent(email) +
-        "&senha=" + encodeURIComponent(senha);
-
+      "http://localhost:5000/usuarios?email=" + encodeURIComponent(email) +
+      "&senha=" + encodeURIComponent(senha);
+      
       const resposta = await fetch(url); // GET (padrão)
-
       if (!resposta.ok) {
         erroLogin.textContent = "Erro ao fazer login. Tente novamente.";
         return;
       }
-
-
+      
+      
       const usuarios = await resposta.json();
-
+      
       if (usuarios.length === 0) {
         erroLogin.textContent = "E-mail ou senha incorretos.";
         return;
       }
-
+      
       const usuario = usuarios[0];
       console.log("Login ok:", usuario);
 
-
+      initHeader(usuario);
+      router.navigateTo('/home');
 
     } catch (e) {
       erroLogin.textContent = "Não foi possível conectar ao servidor.";
